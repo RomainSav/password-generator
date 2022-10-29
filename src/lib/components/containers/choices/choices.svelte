@@ -1,10 +1,10 @@
 <script lang="ts">
   import { Checkbox } from "../../form/checkbox";
 
-  let lowercase = true;
-  let uppercase = true;
-  let numbers = true;
-  let specials = true;
+  export let lowercase = true;
+  export let uppercase = true;
+  export let numbers = true;
+  export let specials = true;
 
   $: isDisabled = [lowercase, uppercase, numbers, specials].filter((val) => val).length === 1;
 </script>

@@ -5,12 +5,20 @@
   import { Slider } from "../../form/slider";
   import { generate } from "../../../utils/generator";
   import { Choices } from "../choices";
+
+  let length: number = 16;
+  let lowercase: boolean;
+  let uppercase: boolean;
+  let numbers: boolean;
+  let specials: boolean;
   
-  let password: string;
+  $: password = generate(length, lowercase, uppercase, numbers, specials);
+
   onMount(() => loadPassword());
 
+
   const loadPassword = () => {
-    password = generate(16, true, true, true, true);
+    password = generate(16, lowercase, uppercase, numbers, specials);
   }
 
   const onSubmit = () => {
@@ -18,10 +26,10 @@
   }
 </script>
 
-<form on:submit|preventDefault={onSubmit} class="bg-gray-2 rounded-md shadow-md p-4 w-fit mx-auto">
+<form on:submit|preventDefault={onSubmit} class="relative bg-gray-2 rounded-md shadow-md p-4 w-fit mx-auto">
   <div class="mb-6 grid grid-cols-[1.5fr_1fr] gap-10">
-    <Slider label="Longueur du mot de passe" />
-    <Choices />
+    <Slider label="Longueur du mot de passe" bind:value={length}/>
+    <Choices bind:lowercase bind:uppercase bind:numbers bind:specials/>
   </div>
 
   <div class="flex items-center gap-3">
