@@ -18,7 +18,7 @@
 
 
   const loadPassword = () => {
-    password = generate(16, lowercase, uppercase, numbers, specials);
+    password = generate(length, lowercase, uppercase, numbers, specials);
   }
 
   const onSubmit = () => {
@@ -26,16 +26,20 @@
   }
 </script>
 
-<form on:submit|preventDefault={onSubmit} class="relative bg-gray-2 rounded-md shadow-md p-4 w-fit mx-auto">
-  <div class="mb-6 grid grid-cols-[1.5fr_1fr] gap-10">
-    <Slider label="Longueur du mot de passe" bind:value={length}/>
-    <Choices bind:lowercase bind:uppercase bind:numbers bind:specials/>
+<div class="mx-auto w-fit">
+  <form on:submit|preventDefault={onSubmit} class="bg-gray-2 rounded-md shadow-md p-4 mb-5">
+    <div class="mb-6 grid grid-cols-[1.5fr_1fr] gap-10">
+      <Slider label="Longueur du mot de passe" max={60} min={1} bind:value={length}/>
+      <Choices bind:lowercase bind:uppercase bind:numbers bind:specials/>
+    </div>
+  
+    <div class="flex items-center gap-3">
+      <Button onClick={() => console.log("COUCOU")}>Copier le mot de passe</Button>
+      <RefreshButton onClick={loadPassword}/>
+    </div>
+  </form>
+  
+  <div class="bg-gray-2 w-full p-4 rounded-md shadow-md">
+    <p class="text-neutral-3 font-medium">{password}</p>
   </div>
-
-  <div class="flex items-center gap-3">
-    <Button onClick={() => console.log("COUCOU")}>Copier le mot de passe</Button>
-    <RefreshButton onClick={loadPassword}/>
-  </div>
-</form>
-
-<h1 class="text-neutral-1">{password}</h1>
+</div>
