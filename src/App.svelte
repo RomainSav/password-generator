@@ -5,13 +5,11 @@
   $: password = generate(16, true, true, true);
 </script>
 
-<main class="min-h-screen bg-gradient-radial flex justify-center items-center">
-  <div>
-    <h1 class="text-neutral-1 font-medium text-4xl">Password Generator</h1>
+<main class="min-h-screen bg-gradient-radial flex flex-col justify-center items-center">
+  <h1 class="text-neutral-1 font-medium text-4xl">Password Generator</h1>
 
-    <div class="mt-10">
-      <Generator />
-    </div>
+  <div class="mt-10">
+    <Generator />
   </div>
 </main>
 
