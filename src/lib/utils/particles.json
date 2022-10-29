@@ -1,0 +1,28 @@
+{
+  "particles": {
+    "number": {
+      "value": 25,
+      "density": {
+        "enable": true,
+        "value_area": 500
+      }
+    },
+    "opacity": {
+      "value": 0.6,
+      "random": false
+    },
+    "size": {
+      "value": 1,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 160,
+      "color": "#5B24EE",
+      "opacity": 0.5
+    },
+    "move": {
+      "enable": true
+    }
+  }
+}
