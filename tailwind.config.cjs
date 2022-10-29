@@ -9,11 +9,15 @@ module.exports = {
       },
 
       gray: {
-        1: "#140B2D"
+        1: "#2A2536",
+        2: "#363040",
+        3: "#453F51"
       },
 
       neutral: {
-        1: "#E0E0E0"
+        1: "#E0E0E0",
+        2: "#B6B6B6",
+        3: "#ACACAC"
       }
     },
     extend: {
