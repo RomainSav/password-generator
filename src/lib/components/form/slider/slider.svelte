@@ -13,6 +13,17 @@
 
   <div class="flex gap-2 items-center">
     <Input bind:value {min} {max}/>
-    <input type="range" {min} {max} bind:value class="w-full h-2 bg-gray-1 rounded-lg appearance-none cursor-pointer">
+    <input type="range" {min} {max} bind:value class="slider w-full h-2 bg-gray-1 rounded-lg appearance-none cursor-pointer">
   </div>
 </div>
+
+<style>
+  .slider::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #5B24EE;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+</style>
