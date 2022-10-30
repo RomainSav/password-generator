@@ -4,7 +4,6 @@
   // Props :
   export let disabled = false;
   export let label: string | null = null;
-
   export let checked = false;
 
   // Style :
