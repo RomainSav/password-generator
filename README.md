@@ -3,4 +3,4 @@
 
 Generate secure and complex passwords!
 
-![Banner](./public/exemple.png)
+![Banner](./public/readme_exemple.png)
