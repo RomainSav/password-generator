@@ -43,7 +43,7 @@
     </div>
   
     <div class="flex items-center gap-3">
-      <Button>Copier le mot de passe</Button>
+      <Button>Copy the password</Button>
       <RefreshButton onClick={loadPassword}/>
     </div>
   </form>
