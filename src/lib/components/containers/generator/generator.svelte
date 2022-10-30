@@ -38,7 +38,7 @@
 <div class="mx-auto w-full md:w-fit p-4">
   <form on:submit|preventDefault={onSubmit} class="bg-gray-2 rounded-md shadow-md p-4 mb-5">
     <div class="mb-6 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10">
-      <Slider label="Longueur du mot de passe" max={60} min={1} bind:value={length}/>
+      <Slider label="Password length" max={60} min={1} bind:value={length}/>
       <Choices bind:lowercase bind:uppercase bind:numbers bind:specials/>
     </div>
   
