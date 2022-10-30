@@ -5,6 +5,9 @@
   import { Slider } from "../../form/slider";
   import { generate } from "../../../utils/generator";
   import { Choices } from "../choices";
+  import { Alert } from "../alert";
+
+  let isAlertShowed = false;
 
   let length: number = 16;
   let lowercase: boolean;
@@ -16,15 +19,21 @@
 
   onMount(() => loadPassword());
 
-
   const loadPassword = () => {
     password = generate(length, lowercase, uppercase, numbers, specials);
   }
 
+  let alertTimeout: number = 0;
   const onSubmit = () => {
     navigator.clipboard.writeText(password);
+    isAlertShowed = true;
+
+    clearTimeout(alertTimeout);
+    alertTimeout = setTimeout(() => isAlertShowed = false, 4000);
   }
 </script>
+
+<Alert label="You have copied the password!" showed={isAlertShowed}/>
 
 <div class="mx-auto w-fit">
   <form on:submit|preventDefault={onSubmit} class="bg-gray-2 rounded-md shadow-md p-4 mb-5">

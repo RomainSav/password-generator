@@ -18,6 +18,10 @@ module.exports = {
         1: "#E0E0E0",
         2: "#B6B6B6",
         3: "#ACACAC"
+      },
+
+      success: {
+        1: "#55E547"
       }
     },
     extend: {
