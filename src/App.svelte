@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Generator } from "./lib/components/containers/generator";
+  import { Github } from "./lib/components/containers/github";
   import { Particles } from "./lib/components/particles";
 </script>
 
@@ -12,6 +13,8 @@
       <Generator />
     </div>
   </div>
+
+  <Github />
 </main>
 
 <style global lang="postcss">
